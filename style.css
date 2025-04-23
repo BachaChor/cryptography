@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+body {
+    padding-top: 60px;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    flex-direction: column;
+}
+
+
+#navigation-bar {
+    position: fixed;
+    top: 0;
+    height: 60px;
+    width: 100%;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    background-color: #262626;
+    z-index: 1000;
+}
+
+#navigation-bar ul {
+    display : flex;
+    justify-content :space-around;
+    align-items : center;
+    flex-direction: row;
+    gap: 90px;
+    list-style: none;   /* removes the dot(.) of the un-ordered-list */
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: large;
+}
+
+#hero-image-container {
+    width: 100%;
+    height: 650px;
+    overflow: hidden;
+}
+
+#hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+#subject-name, #prep-type {
+    width: 100%;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    padding: 0 10px;
+    font-size: 1.2rem;
+    color: white;
+    font-weight: bold;
+}
+
+.divider {
+    width: 2px;
+    height: 60%;
+    background-color: white;
+    opacity: 0.5;
+    border-radius: 10px;
+}
+
+
+
+
+#main-container {
+    width: 100%;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    flex-direction: column;
+    
+    color: white;   
+    font-size: large;
+    padding: 50px 0;
+}
+
+
+
+#details {
+    width: 98%;
+    height: 60px;
+    background-color: #212121;
+    margin: 20px 0;
+    display : flex;
+    justify-content:space-evenly;
+    align-items : center;
+    border-radius: 25px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+
+
+
+.questions {
+    background-color: #f1f1f1; /* Light background for contrast */
+    color: #1a1a1a; /* Darker text color for readability */
+    height: auto; /* Allow height to grow with content */
+    width: 90%;
+    margin: 10px 0;
+    border-radius: 12px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    animation: scrollAnimation 0.6s ease-in-out both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+.questions:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.01);
+}
+
+.question-number {
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    background-color: #262626;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.completion-checkbox {
+    margin-left: auto; /* Push it to the right end */
+    transform: scale(1.5); /* Make it slightly bigger */
+    accent-color: #3f51b5; /* Set checkbox color */
+}
+
+
+
+
+
+#body-footer {
+    height: 350px;
+    width: 100%;
+    background-color: #262626;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1rem;
+    padding: 20px;
+}
+
+
+
+
+
+
+/* making the scroll animation */
+@keyframes scrollAnimation {
+    from {
+        opacity: 0;
+        scale: 0.8;
+        transform: translateY(60px) rotateX(10deg);
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+        transform: translateY(0) rotateX(0);
+    }
+}
+
+
+
+
+
+@media screen and (max-width: 768px) {
+
+    #navigation-bar ul {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    #main-container {
+        font-size: medium;
+        padding: 30px 10px;
+    }
+
+    .questions {
+        width: 95%;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+        gap: 5px;
+    }
+
+    .question-number {
+        margin-bottom: 5px;
+    }
+
+    .completion-checkbox {
+        align-self: flex-start;
+    }
+
+    #details {
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    #subject-name, #prep-type {
+        font-size: 1rem;
+        justify-content: center;
+    }
+
+    #hero-image-container {
+        height: 300px;
+    }
+
+    #hero-image {
+        object-position: center;
+    }
+}
