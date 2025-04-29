@@ -3,58 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CryptoGrpahy</title>
+    <title>Cryptography</title>
 
     <link rel="stylesheet" href="style.css">
-
-
-    <!-- icons  -->
     
 </head>
 <body>
+    <!-- Progress bar at the top -->
+    <div class="progress-bar"></div>
+    
+    <!-- Initial page loading overlay -->
+    <div class="loading-overlay">
+        <div class="loader"></div>
+    </div>
 
     <nav id="navigation-bar">
-        <ul>
-            <li><a href="/home">
-                    Home
-                </a></li>
-            <li><a href="/about">
-                    About
-                </a></li>
-            <li><a href="/questions"> Questions</a></li>
-            <li><a href="/start"> Start-Prep</a></li>
+        <ul class="stagger-load">
+            <li><a href="/home">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/questions">Questions</a></li>
+            <li><a href="/start">Start-Prep</a></li>
             <li><a href="/overview">Overview</a></li>
         </ul>
     </nav>
 
-
-    <div id="hero-image-container">
-        <img src="image/hero.jpg" alt="hero-image" id="hero-image">
+    <div id="hero-image-container" class="loading">
+        <img src="image/hero.jpg" alt="hero-image" id="hero-image" onload="this.parentNode.classList.remove('loading')">
     </div>
 
-    <div id="main-container">
+    <div id="main-container" class="fade-in">
         <div id="details">
-            
-            <div id="subject-name">
-                <span>Subject-Name: </span>
+            <div id="subject-name" class="content-loading">
+                <span>Subject-Name: Cryptography</span>
             </div>
-            <div class="divider"></div>
-            <div id="prep-type">
-                <span>Type:</span>
+            <div class="divider content-loading"></div>
+            <div id="prep-type" class="content-loading">
+                <span>Type: Advanced Security</span>
             </div>
-
         </div>
+        
+        <!-- Adding skeleton loaders for questions that will appear -->
+        <div class="question-skeleton shimmer"></div>
+        <div class="question-skeleton shimmer"></div>
+        <div class="question-skeleton shimmer"></div>
     </div>
 
-    <div id="signature">
+    <div id="signature" class="content-loading">
         Author: Mohit Mittal
     </div>
 
-    <footer id="body-footer">
-
+    <footer id="body-footer" class="fade-in">
+        <div class="content-loading">xTreams Learning Platform</div>
+        <div class="content-loading">© 2025 All Rights Reserved</div>
+        <div class="content-loading">Contact: <a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&emr=1&followup=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&ifkv=ASKV5MjTTuvlFHqMHMuRbiToKtmLTiFgvVDFCfBrV67O-AOReDQpj7cCzYuEYhgG01a8sesLJ7dn&osid=1&passive=1209600&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S1678591774%3A1745917383229760">notmohitmittal@gmail.com</a></div>
     </footer>
-
-
 
     <script src="script.js"></script>
     
