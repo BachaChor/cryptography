@@ -179,3 +179,26 @@ window.addEventListener("scroll", () => {
         navBar.style.display = "flex";
     }
 });
+
+
+
+window.addEventListener('load', function() {
+    document.querySelector('.loading-overlay').classList.add('loaded');
+    
+    // Simulate loading questions after a delay
+    setTimeout(function() {
+        const skeletons = document.querySelectorAll('.question-skeleton');
+        
+        // Replace skeletons with actual question elements
+        skeletons.forEach((skeleton, index) => {
+            const question = document.createElement('div');
+            question.className = 'questions';
+            question.innerHTML = `
+                <div class="question-number">${index + 1}</div>
+                <div>What is the difference between symmetric and asymmetric encryption?</div>
+                <input type="checkbox" class="completion-checkbox">
+            `;
+            skeleton.parentNode.replaceChild(question, skeleton);
+        });
+    }, 2000);
+});
